@@ -5,9 +5,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 import joblib
-
 import os
-import pandas as pd
 
 # Get the current working directory
 current_directory = os.getcwd()
@@ -20,11 +18,8 @@ if os.path.exists(file_path):
     # Read the CSV file
     heart_data = pd.read_csv(file_path)
 else:
-    print("File not found:", file_path)
-
-
-# Load the dataset
-heart_data = pd.read_csv('heart_disease_data.csv')
+    st.error("File not found: " + file_path)
+    st.stop()
 
 # Split the data into features and target variable
 x = heart_data.drop(columns='target', axis=1)
@@ -72,3 +67,5 @@ if st.button('Predict'):
         st.success('The Person does not have a Heart Disease')
     else:
         st.error('The Person has Heart Disease')
+
+
