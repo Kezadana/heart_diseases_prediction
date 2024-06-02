@@ -1,9 +1,9 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
-from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score
+from scikit-learn.linear_model import LogisticRegression
+from scikit-klearn.model_selection import train_test_split
+from scikit-learn.metrics import accuracy_score
 import joblib
 import os
 
